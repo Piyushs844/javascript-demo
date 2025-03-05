@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Execution Context</title>
+</head>
+<body>
+    <h1>Global Execution Context</h1>
+</body>
+<script>
+
+ // Problem 1
+
+// console.log(x)
+// var x=10
+// foo()
+// function foo(){
+//     console.log('Inside Foo Function')
+// }
+/*
+Memory phase- First Var is Gone in memory phase And take value of x is undefined like var x=undefined,
+then full foo function is gone in memory phase like - function foo(){
+                                                       console.log('Inside Foo Function')
+                                                       }
+then we come to code phase - 
+in code phase code runs line by line first console.log(x) output is undefined then go to second line var x = 10
+and in memory phase the value of x is 10 the foo() function is called and execute the total output is 
+undefined
+Inside Foo Function                                                     
+
+*/
+
+//Problem 2
+
+// function first(){
+//     console.log('First Function')
+//     second()
+// }
+// function second(){
+//     console.log('Second function')
+//     third()
+// }
+// function third(){
+//     console.log('third function')
+// }
+// first()
+
+/*
+Memory phase - All the gone to the memory phase as it is then code phase executes
+
+code phase - the code runs line by line first call the first() function then enter in first function nd
+then executes second() executes nd the third()
+output - 
+First Function
+Second function 
+third function
+*/
+
+//Problem 3
+/*
+Explain Global Execution context
+
+Global Exuecution starts when Javascript code starts Executing
+
+It have two phase 1. Memory Phase 2.Code Phase
+
+1. Memory Phase - It is Storage Area, Where function And variables stores before Execution,
+ Hoisting of variables in memory phase.
+2. code phase - where code executes line by line
+
+*/
+
+// problem 4
+/*
+memory phase vs code phase
+1. Memory Phase - It is Storage Area, Where function And variables stores before Execution,
+ Hoisting of variables in memory phase.
+2. code phase - where code executes line by line
+1. Memory Phase (Creation Phase)
+This happens before the actual execution of the code.
+The JavaScript engine allocates memory for variables and functions.
+Function declarations are hoisted and stored in memory with their full definition.
+2. Code Phase (Execution Phase)
+This is when the JavaScript engine actually runs the code line by line.
+Variables declared with let and const get assigned values.
+Function calls are executed.
+The execution context keeps track of which function is currently running.
+
+*/
+ //Problem 5
+ /*
+ Function Execution Lifestyle
+
+ function full expression allocates in memory phase nd executes in code phase nd 
+ after the code executes it will go to dead zone in memory phase. 
+ */
+</script>
+</html>

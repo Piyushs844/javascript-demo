@@ -1,0 +1,300 @@
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises Assignment</title>
+    <style>
+        button {
+            display: block;
+            margin: auto;
+            padding: 10px 20px;
+        }
+        #imageLoader {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+        #imageLoader img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <button id="fetchBtn">Get Data</button>
+    <div id="imageLoader">
+        <img id="loadingImage" src="" alt="Loading...">
+    </div>
+
+    <script>
+        let imageElement = document.getElementById("loadingImage");
+        let button = document.getElementById("fetchBtn");
+
+        let defaultImage = "https://assets-v2.lottiefiles.com/a/91cc0ece-1150-11ee-b7cb-d3afb5c0c001/QNF78Uk4YE.gif";
+        let loadingGif = "https://media.tenor.com/uDktrFdyUhQAAAAM/it-is-all-about-the-data-in-data-we-trust.gif";
+
+        function showLoader() {
+            imageElement.src = defaultImage;
+        }
+
+        button.addEventListener("click", function() {
+            button.disabled = true;  // Disable button
+            showLoader();
+
+            setTimeout(function() {
+                imageElement.src = loadingGif;
+                button.disabled = false;  // Re-enable button after loading
+            }, 5000);
+        });
+    </script>
+</body>
+</html>  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<!-- <script>
+//Seat Availability
+// Payment Process
+// confirm booking
+//book movie Tickets
+
+function checkSeatAvailability(seatNumber){
+    return new Promise(function(resolve,reject){
+        setTimeout(()=>{
+            let isAvailable = Math.random() > 0.3
+            if(isAvailable){
+                resolve(`Seat ${seatNumber} is Available`)
+            }
+            else{
+                reject('Seat not Available Try Next Time')
+            }
+        },1000)
+
+    })
+}
+
+function processPayment(paymentStatus){
+    return new Promise(function(resolve,reject){
+        let ispayment = true
+        if(ispayment){
+            resolve(`Payment Status Completed`)
+        }
+        else{
+            reject('payment Not recieved')
+        }
+    })
+}
+
+function confirmBooking(movieName,seatNumber){
+    return new Promise(function(resolve,reject){
+        setTimeout(() => {
+            resolve(`Booking confirmed for ${movieName}, Seat No: ${seatNumber}`);
+        }, 1000);
+    
+    })
+
+}
+
+function bookMovieTicket(movieName,seatNumber,paymentStatus){
+    checkSeatAvailability(seatNumber)
+    .then((seatMessage) => {
+            console.log(seatMessage);
+            return processPayment(paymentStatus);
+        })
+        .then((paymentMessage)=>{
+            console.log(paymentMessage)
+            return confirmBooking(movieName, seatNumber);
+        })
+        .then((confirmationMessage) => {
+            console.log(confirmationMessage);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
+
+bookMovieTicket('vikram',14,true)
+
+
+</script> -->
+
+ <!-- <script>
+    //resturant Availablity
+    // order confirmation
+    // order success or delayed randomly
+
+
+    function resturantAvailablity(resturantName){
+        return new Promise(function(resolve,reject){
+            setTimeout(()=>{
+                let isAvailable = Math.random() > 0.3
+                if(isAvailable){
+                    resolve(`Resturant ${resturantName} is Available`)
+                }
+                else{
+                    reject('Sorry resturant is Closed')
+                }
+
+            },1000)
+        })
+
+    }
+
+    function orderConfirmation(orderName){
+        return new Promise(function(resolve,reject){
+            resolve(`Your ${orderName} is Being Prepared `)
+        })
+    }
+
+    function checkDeliveredStatus(orderName){
+        return new Promise(function(resolve,reject){
+            let isDelivered = Math.random() >0.3
+            if(isDelivered){
+                resolve(`Your ${orderName} is delivered Successfully`)
+            }
+        })
+
+    }
+
+    function placeorder(resturantName,orderName){
+        resturantAvailablity(resturantName)
+        .then((resturantMessage)=>{
+            console.log(resturantMessage)
+            return orderConfirmation(orderName)
+        })
+        .then((orderMessage)=>{
+            console.log(orderMessage)
+            return checkDeliveredStatus(orderName)
+        })
+        .then((message)=>{
+            console.log(message)
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    }
+
+
+    placeorder('zomato', 'Burger')
+
+
+</script>  -->
+
+<!-- <script>
+    function Checkpercentage(rollNumber){
+        return new Promise(function(resolve,reject){
+            setTimeout(()=>{
+                if(rollNumber==123){
+                resolve(`Your this ${rollNumber} result is : 85% (Pass)`)
+            }
+            else{
+                reject('Ivalid Roll Number! Please Try Again')
+            }
+        })
+
+
+            },2000)
+          
+    }
+ function checkingError(){
+    return new Promise(function(resolve,reject){
+        let isError = Math.random()> 0.7
+        if(!isError){
+            resolve("show result")
+        }
+        else{
+            reject('server Error')
+        }
+    })
+ }
+   
+ function checkResult(rollNumber){
+    checkingError()
+    .then((errorMessage)=>{
+        console.log(errorMessage)
+        return Checkpercentage(rollNumber)
+    })
+    .then((percentageMessage)=>{
+        console.log(percentageMessage)
+
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+ }
+
+ checkResult(123)
+
+
+
+</script> -->
+
+<!-- <script>
+   // verify stocks availability
+   // payment proccess
+   //confirm order
+
+   function stocksAvailability(StockName){
+    return new Promise(function(resolve,reject){
+        let isAvailable = true
+            if(isAvailable){
+                resolve(`${StockName} stock is available`)
+        
+          }
+          else{
+            reject('Out of Stock! Please Try Later')
+          }
+    })
+   }
+
+   function paymentProccess(){
+    return new Promise(function(resolve,reject){
+        let ispaymentDone = Math.random() > 0.3
+
+        if(ispaymentDone){
+            resolve('Payment Success')
+        }
+        else{
+            reject('Payment Failed Order Cancelled')
+        }
+    })
+   }
+
+   function orderConfirmation(){
+    return new Promise(function(resolve,reject){
+        resolve('Your Order is Confirmed')
+    })
+   }
+
+function placeorder(StockName){
+    stocksAvailability(StockName)
+    .then((stockMessage)=>{
+        console.log(stockMessage)
+        return paymentProccess()
+    })
+    .then((paymentMessage)=>{
+        console.log(paymentMessage)
+        return orderConfirmation()
+    })
+    .then((message)=>{
+        console.log(message)
+
+    })
+}
+
+placeorder('Creatine')
+</script> -->
